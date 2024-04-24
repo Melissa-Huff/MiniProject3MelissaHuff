@@ -36,8 +36,9 @@ def create_app(test_config=None):
     app.register_blueprint(auth.bp)
 
 
-    from . import blog
-    app.register_blueprint(blog.bp)
+    from . import fitness
+    app.register_blueprint(fitness.bp)
     app.add_url_rule('/', endpoint='index')
+
 
     return app

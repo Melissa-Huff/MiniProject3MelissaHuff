@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS user;
-DROP TABLE IF EXISTS post;
+DROP TABLE IF EXISTS activity;
 
 CREATE TABLE user (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -7,11 +7,12 @@ CREATE TABLE user (
   password TEXT NOT NULL
 );
 
-CREATE TABLE post (
+CREATE TABLE activity (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  author_id INTEGER NOT NULL,
-  created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  title TEXT NOT NULL,
-  body TEXT NOT NULL,
-  FOREIGN KEY (author_id) REFERENCES user (id)
+  user_id INTEGER NOT NULL,
+  date DATE NOT NULL,
+  activity_type TEXT NOT NULL,
+  duration INTEGER NOT NULL,  -- Duration in minutes
+  calories_burned INTEGER,
+  FOREIGN KEY (user_id) REFERENCES user (id)
 );
