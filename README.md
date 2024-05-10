@@ -25,7 +25,7 @@ Run application flask --app flaskr run
 ### Install requirements with pip
 
 ```
-pip install -r equirements.txt
+pip install -r requirements.txt
 ```
 
 
